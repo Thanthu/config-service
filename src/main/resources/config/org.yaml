@@ -1,7 +1,33 @@
 server:
   port: 8081
+  
 management:
   endpoints:
     web:
       exposure:
-        include: '*'        
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+
+endpoints:
+  shutdown:
+    enabled: true
+        
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka/
+      
+info:
+  app:
+    name: Organization Microservice
+    description: Microservice containing services related to Organization, Practice and Doctor
+    version: 1.0.0
+    
+
+       
