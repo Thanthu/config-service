@@ -29,5 +29,9 @@ info:
     description: Microservice containing services related to Organization, Practice and Doctor
     version: 1.0.0
     
+services:
+  patient:
+    baseUrl: http://localhost:8080
+    createPatientUrl: /api/v1/patient
 
        
