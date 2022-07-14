@@ -34,4 +34,16 @@ services:
     baseUrl: http://localhost:8080
     createPatientUrl: /api/v1/patient
 
-       
+resilience4j:
+  circuitbreaker:
+    instances:
+      practiceControllerListPatientsByPractice: 
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30000
+        permitted-number-of-calls-in-half-open-state: 2
+      doctorControllerListPatientsByDoctor: 
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30000
+        permitted-number-of-calls-in-half-open-state: 2       

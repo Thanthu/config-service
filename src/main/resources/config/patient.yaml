@@ -28,3 +28,17 @@ info:
     name: Patient Microservice
     description: Microservice containing services related to Patient
     version: 1.0.0
+    
+resilience4j:
+  circuitbreaker:
+    instances:
+      patientControllerGetDoctor: 
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30000
+        permitted-number-of-calls-in-half-open-state: 2
+      patientControllerGetPractice: 
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30000
+        permitted-number-of-calls-in-half-open-state: 2
