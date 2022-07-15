@@ -46,4 +46,8 @@ resilience4j:
         minimum-number-of-calls: 5
         failure-rate-threshold: 50
         wait-duration-in-open-state: 30000
-        permitted-number-of-calls-in-half-open-state: 2       
+        permitted-number-of-calls-in-half-open-state: 2   
+        
+logging:
+  level: 
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG    
