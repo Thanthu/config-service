@@ -45,4 +45,11 @@ resilience4j:
         
 logging:
   level: 
-    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG 
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    
+spring:
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    baseUrl: http://localhost:9411/
